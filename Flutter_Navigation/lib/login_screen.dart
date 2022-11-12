@@ -48,11 +48,10 @@ class LoginScreen extends StatelessWidget {
                 height: 5,
               ),
               Row(
-                mainAxisAlignment:  MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(onPressed: (){}, child: const Text(
-                      "Forget Password?"
-                  ))
+                  TextButton(
+                      onPressed: () {}, child: const Text("Forget Password?"))
                 ],
               ),
               const SizedBox(
@@ -63,10 +62,11 @@ class LoginScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  gradient: const LinearGradient(colors: [Colors.red, Colors.orange,Colors.indigo]),
+                  gradient: const LinearGradient(
+                      colors: [Colors.red, Colors.orange, Colors.indigo]),
                 ),
                 child: MaterialButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const FigureA()),
@@ -91,20 +91,17 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-
               Row(
-                mainAxisAlignment:  MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "Don't have an Account?",
                     style: TextStyle(
                       color: Colors.black.withOpacity(0.7),
                     ),
-
                   ),
-                  TextButton(onPressed: (){}, child: const Text(
-                      "Register Account"
-                  ))
+                  TextButton(
+                      onPressed: () {}, child: const Text("Register Account"))
                 ],
               ),
             ],
@@ -123,16 +120,36 @@ class FigureA extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Figure A'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('New Figure'),
-          onPressed: () {
-            Navigator.push(
-             context,
-             MaterialPageRoute(builder: (context) => const FigureB()),
-            );
-          },
-        ),
+      body: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(15.0),
+            width: 350,
+            height: 150,
+            color: Colors.deepOrangeAccent,
+          ),
+          Container(
+            margin: EdgeInsets.all(15.0),
+            width: 350,
+            height: 150,
+            color: Colors.indigo,
+          ),
+          Container(
+            margin: EdgeInsets.all(15.0),
+            width: 350,
+            height: 150,
+            color: Colors.teal,
+          ),
+          ElevatedButton(
+            child: const Text('New Figure'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const FigureB()),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
@@ -146,15 +163,44 @@ class FigureB extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Figure B'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('New Figure'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const FigureC()),
-            );
-          },
+      body: Container(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(12.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.deepOrangeAccent,
+                ),
+                Container(
+                  margin: EdgeInsets.all(12.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.indigo,
+                ),
+                Container(
+                  margin: EdgeInsets.all(12.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.green,
+                ),
+              ],
+            ),
+            Container(
+              height: 435,
+            ),
+            ElevatedButton(
+              child: const Text('New Figure'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FigureC()),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
@@ -166,11 +212,47 @@ class FigureC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Figure C'),
-      ),
-      body: Center(
-      ),
-    );
+        appBar: AppBar(
+          title: Text('Figure C'),
+        ),
+        body: Container(
+            child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(12.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.deepOrangeAccent,
+                ),
+                Container(
+                  margin: EdgeInsets.all(12.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.indigo,
+                ),
+                Container(
+                  margin: EdgeInsets.all(12.0),
+                  width: 100,
+                  height: 100,
+                  color: Colors.green,
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.all(15.0),
+              width: 350,
+              height: 150,
+              color: Colors.brown,
+            ),
+            Container(
+              margin: EdgeInsets.all(15.0),
+              width: 350,
+              height: 150,
+              color: Colors.yellow,
+            )
+          ],
+        )));
   }
 }
